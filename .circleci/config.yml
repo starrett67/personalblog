@@ -37,7 +37,7 @@ jobs:
       - run: npm run coverage
       
       - run: 
-        name: Send coverage to codacy
-        command: cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage && rm -rf ./coverage
-        environment:
-          CODACY_PROJECT_TOKEN: 4d49119b9477487f972037e1b2e62de6
+          name: Send coverage to codacy
+          command: cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage && rm -rf ./coverage
+          environment:
+            CODACY_PROJECT_TOKEN: 4d49119b9477487f972037e1b2e62de6
