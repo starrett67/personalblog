@@ -36,6 +36,6 @@ jobs:
       # run tests and export code coverage!
       - run: export CODACY_PROJECT_TOKEN=4d49119b9477487f972037e1b2e62de6
 
-      - run: ng test --code-coverage
+      - run: npm run coverage
       
       - run: cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage && rm -rf ./coverage
