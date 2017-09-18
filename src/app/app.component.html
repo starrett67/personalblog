@@ -5,4 +5,8 @@
   </h1>
   <hr>
   <entry-summary *ngFor="let entry of entryList;let i = index;" [entry]="entryList[i]"></entry-summary>
+  <div class="loadmore">
+    <button (click)="addEntry()" value="Load More Entries">Load More Entries</button>
+  </div>
+
 </div>

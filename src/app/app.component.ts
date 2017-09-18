@@ -17,4 +17,8 @@ export class AppComponent {
       this.entryList.push(Entry.generate());
     }
   }
+
+  addEntry() {
+    this.entryList.push(Entry.generate());
+  }
 }
