@@ -1,3 +1,4 @@
 sudo apt-get update
 sudo apt-get install curl -y
-find dist/ -exec curl -T {} ftp://$FTP_USER:$FTP_PASS@ftp.epizy.com/htdocs
+ls
+find dist/ -type f -exec curl -u $FTP_USER:$FTP_PASS --ftp-create-dirs -T {} ftp://192.168.1.158/htdocs/{} \;
