@@ -1,0 +1,26 @@
+img.author {
+    height: 70px;
+    width: 70px;
+}
+
+.namedate {
+    padding-left: 5px;
+    padding-top: 8px;
+    text-align: left;
+    line-height: 30%;
+}
+
+.heading-image {
+    height: 250px;
+    width: 550px;
+    padding-top: 20px;
+}
+
+.container {
+    padding-top: 60px;
+    text-align: left;
+}
+
+.entry-description {
+    color: grey;
+}

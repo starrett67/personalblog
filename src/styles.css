@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.sitetitle {
+    padding-top: 80px;
+    padding-bottom: 150px;
+}
+
+p.description {
+    font-style: italic;
+}
+
+hr {
+    width: 80%;
+}
