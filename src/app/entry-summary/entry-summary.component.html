@@ -1,0 +1,26 @@
+<div class="container">
+  <table>
+    <tr>
+      <td>
+        <img class="author" src="{{entry.authorImage}}">
+      </td>
+      <td class="namedate">
+        <div class="namedate">
+          <p class="author-name">
+            {{entry.author}}
+          </p>
+          <p class="date">
+            {{entry.publishedDate | date}}
+          </p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <img class="heading-image" src="{{entry.headingImage}}">
+  <h2 class="entry-title">
+    {{entry.title}}
+  </h2>
+  <h3 class="entry-description">
+    {{entry.description}}
+  </h3>
+</div>

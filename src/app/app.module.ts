@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
+import { EntrySummaryComponent } from './entry-summary/entry-summary.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EntrySummaryComponent
   ],
   imports: [
     BrowserModule,
