@@ -19,6 +19,6 @@ export class EntryComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.entry = this.entryService.GetEntry(id);
+    this.entry = this.entryService.getEntry(id);
   }
 }

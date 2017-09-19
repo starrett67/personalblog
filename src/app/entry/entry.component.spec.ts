@@ -14,7 +14,7 @@ describe('EntryComponent', () => {
     TestBed.configureTestingModule({
       declarations: [EntryComponent],
       providers: [
-        { provide: EntryService, useValue: { GetEntry: () => testEntry } },
+        { provide: EntryService, useValue: { getEntry: () => testEntry } },
         { provide: ActivatedRoute, useValue: { snapshot: { paramMap: { get: () => 1 } } } }
       ]
     }).compileComponents();

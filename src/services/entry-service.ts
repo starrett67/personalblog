@@ -21,7 +21,7 @@ export class EntryService {
         return this.entries;
     }
 
-    public GetEntry(id): Entry {
+    public getEntry(id): Entry {
         return this.entries.find(e => e._id === id);
     }
 }
