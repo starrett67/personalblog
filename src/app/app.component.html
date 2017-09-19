@@ -1,12 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1 class="sitetitle">
-    {{title}}
+    <a routerLink="/home" routerLinkActive="active">
+      {{title}}
+    </a>
   </h1>
   <hr>
-  <entry-summary *ngFor="let entry of entryList;let i = index;" [entry]="entryList[i]"></entry-summary>
-  <div class="loadmore">
-    <button (click)="addEntry()" value="Load More Entries">Load More Entries</button>
-  </div>
-
+  <router-outlet></router-outlet>
 </div>
