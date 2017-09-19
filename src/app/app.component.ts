@@ -9,7 +9,7 @@ import { Entry } from '../models/entry';
 })
 
 export class AppComponent {
-  title = 'My Dumb Blog';
+  title = 'My Dumb Blogs';
   public entryList: Entry[] = [];
 
   constructor() {
