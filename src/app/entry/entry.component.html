@@ -1,4 +1,7 @@
-<div class="container" *ngFor="let entry of entryList;">
+<div class="container">
+  <h2 class="entry-title">
+    {{entry.title}}
+  </h2>
   <table>
     <tr>
       <td>
@@ -16,17 +19,8 @@
       </td>
     </tr>
   </table>
-
-  <a routerLink="/entry/{{entry._id}}" routerLinkActive="active">
   <img class="heading-image" src="{{entry.headingImage}}">
-  <h2 class="entry-title">
-    {{entry.title}}
-  </h2>
-  </a>
-  <h3 class="entry-description">
-    {{entry.description}}
-  </h3>
-</div>
-<div class="loadmore">
-  <button (click)="addEntry()" value="Load More Entries">Load More Entries</button>
+  <div class="body">
+    {{entry.body}}
+  </div>
 </div>

@@ -10,6 +10,8 @@ export class Entry {
     public headingImage: string;
     public publishedDate: Date;
     public lastEditDate: Date;
+    public body: string;
+    public _id: string;
 
     static generate(): Entry {
         const codingImages = [
@@ -29,6 +31,8 @@ export class Entry {
         newEntry.lastEditDate = newEntry.publishedDate;
         newEntry.authorImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVnbNVR-XdlwSafETKL2PmNrMZ0Hn0KBOzQHWOrsisg5-FRneGXw';
         newEntry.headingImage = codingImages[chance.integer({ min: 0, max: 5 })];
+        newEntry.body = chance.paragraph();
+        newEntry._id = newEntry.title.replace(' ', '_').substring(0, 10) + '_' + chance.guid().substring(0, 7);
         return newEntry;
     }
     constructor() { }

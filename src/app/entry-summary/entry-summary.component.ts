@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Entry } from '../../models/entry';
+import { EntryService } from '../../services/entry-service';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -8,11 +9,18 @@ import { Entry } from '../../models/entry';
   styleUrls: ['./entry-summary.component.css']
 })
 export class EntrySummaryComponent implements OnInit {
-  @Input() public entry: Entry;
+  public entryList: Entry[];
+  private entryService: EntryService;
 
-  constructor() { }
+  constructor(entryService: EntryService) {
+    this.entryList = entryService.getEntries();
+    this.entryService = entryService;
+  }
 
   ngOnInit() {
   }
 
+  addEntry() {
+    this.entryList = this.entryService.addEntries();
+  }
 }

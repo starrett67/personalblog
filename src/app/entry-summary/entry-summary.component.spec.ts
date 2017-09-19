@@ -1,23 +1,27 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Entry } from '../../models/entry';
 import { EntrySummaryComponent } from './entry-summary.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { EntryService } from '../../services/entry-service';
 
 describe('EntrySummaryComponent', () => {
   let component: EntrySummaryComponent;
   let fixture: ComponentFixture<EntrySummaryComponent>;
-  let testEntry = Entry.generate();
+  const testEntry = Entry.generate();
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EntrySummaryComponent ]
+      imports: [RouterTestingModule],
+      declarations: [EntrySummaryComponent],
+      providers: [EntryService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(EntrySummaryComponent);
     component = fixture.componentInstance;
-    component.entry = testEntry;
+    component.entryList = [testEntry];
     fixture.detectChanges();
   });
 
