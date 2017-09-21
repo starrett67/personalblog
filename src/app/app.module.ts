@@ -7,18 +7,24 @@ import { EntryComponent } from './entry/entry.component';
 import { EntryService } from '../services/entry-service';
 import { AppRoutingModule } from './app-routing.module';
 import { SideWidgetsComponent } from './side-widgets/side-widgets.component';
+import { CKEditorModule } from 'ng2-ckeditor';
+import { NewEntryComponent } from './new-entry/new-entry.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     EntrySummaryComponent,
     EntryComponent,
-    SideWidgetsComponent
+    SideWidgetsComponent,
+    NewEntryComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    FormsModule,
+    CKEditorModule
   ],
   providers: [EntryService],
   bootstrap: [AppComponent]

@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SideWidgetsComponent } from './side-widgets.component';
 
 describe('SideWidgetsComponent', () => {
@@ -8,9 +7,9 @@ describe('SideWidgetsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SideWidgetsComponent ]
+      declarations: [SideWidgetsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

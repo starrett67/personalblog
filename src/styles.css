@@ -28,3 +28,7 @@ body {
 .container {
     padding-top: 30px;
 }
+
+.right {
+    float: right;
+}
