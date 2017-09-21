@@ -8,12 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewEntryComponent implements OnInit {
   public ckeditorContent: string;
+  public title: string;
+  public description: string;
+  public imageUrl: string;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  save(event) {
+  save() {
     console.log(event);
     console.log(this.ckeditorContent);
   }
