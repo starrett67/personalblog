@@ -6,12 +6,14 @@ import { EntrySummaryComponent } from './entry-summary/entry-summary.component';
 import { EntryComponent } from './entry/entry.component';
 import { EntryService } from '../services/entry-service';
 import { AppRoutingModule } from './app-routing.module';
+import { SideWidgetsComponent } from './side-widgets/side-widgets.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EntrySummaryComponent,
-    EntryComponent
+    EntryComponent,
+    SideWidgetsComponent
   ],
   imports: [
     AppRoutingModule,
