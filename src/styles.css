@@ -1,30 +1,30 @@
+/*!
+ * Start Bootstrap - Blog Home (http://startbootstrap.com/template-overviews/blog-home)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-blog-home/blob/master/LICENSE)
+ */
+
 /* You can add global styles to this file, and also import other style files */
 .sitetitle {
     padding-top: 80px;
     padding-bottom: 80px;
 }
 
-p.description {
-    font-style: italic;
-}
-
-hr {
-    width: 80%;
-}
-
-a, a:link, a:visited, a:hover, a:active {
+a.black, a:link.black, a:visited.black, a:hover.black, a:active.black {
     color: black;
     text-decoration: none;
 }
 
-img.author {
-    height: 70px;
-    width: 70px;
+body {
+    padding-top: 54px;
 }
 
-.namedate {
-    padding-left: 5px;
-    padding-top: 8px;
-    text-align: left;
-    line-height: 30%;
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+.container {
+    padding-top: 30px;
 }

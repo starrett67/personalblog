@@ -26,7 +26,7 @@ export class Entry {
         const chance = new Chance();
         newEntry.author = chance.name();
         newEntry.title = chance.sentence({ words: 3 });
-        newEntry.description = chance.sentence({ words: 6 });
+        newEntry.description = chance.paragraph({ sentence: 3 });
         newEntry.publishedDate = chance.date({ year: 2017 });
         newEntry.lastEditDate = newEntry.publishedDate;
         newEntry.authorImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVnbNVR-XdlwSafETKL2PmNrMZ0Hn0KBOzQHWOrsisg5-FRneGXw';

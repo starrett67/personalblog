@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import { EntryService } from '../../services/entry-service';
 import { Entry } from '../../models/entry';
+import { SideWidgetsComponent } from '../side-widgets/side-widgets.component';
 
 describe('EntryComponent', () => {
   let component: EntryComponent;
@@ -12,7 +13,7 @@ describe('EntryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [EntryComponent],
+      declarations: [EntryComponent, SideWidgetsComponent],
       providers: [
         { provide: EntryService, useValue: { getEntry: () => testEntry } },
         { provide: ActivatedRoute, useValue: { snapshot: { paramMap: { get: () => 1 } } } }
