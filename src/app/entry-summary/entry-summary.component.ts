@@ -13,7 +13,10 @@ export class EntrySummaryComponent implements OnInit {
   private entryService: EntryService;
 
   constructor(entryService: EntryService) {
-    this.entryList = entryService.getEntries();
+    entryService.getEntries()
+      .subscribe(entries => {
+        this.entryList = entries;
+      });
     this.entryService = entryService;
   }
 

@@ -1,17 +1,34 @@
 import { Entry } from '../models/entry';
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import * as config from '../../config';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
+@Injectable()
 export class EntryService {
     private entries: Entry[] = [];
-
-    constructor() {
+    private url: string;
+    constructor(private http: Http) {
+        this.url = 'http://localhost:' + config.port + '/api/post';
         this.entries = [];
         for (let i = 0; i < 5; i++) {
             this.entries.push(Entry.generate());
         }
     }
 
-    public getEntries(): Entry[] {
-        return this.entries;
+    public getEntries(): Observable<Entry[]> {
+        return this.http.get(this.url)
+            .map(res => {
+                for (const entry of res.json()) {
+                    this.entries.push(Entry.loadNewEntry(entry));
+                }
+                return this.entries;
+            });
+    }
+
+    public saveEntry(entry: Entry): void {
+        this.http.post(this.url, entry);
     }
 
     public addEntries(): Entry[] {

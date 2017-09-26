@@ -35,6 +35,11 @@ export class Entry {
         newEntry._id = newEntry.title.replace(' ', '_').substring(0, 10) + '_' + chance.guid().substring(0, 7);
         return newEntry;
     }
-    constructor() { }
 
+    static loadNewEntry (data): Entry {
+        return JSON.parse(data);
+    }
+    
+    constructor() {
+    }
 }

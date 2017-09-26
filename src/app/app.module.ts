@@ -10,6 +10,7 @@ import { SideWidgetsComponent } from './side-widgets/side-widgets.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { NewEntryComponent } from './new-entry/new-entry.component';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     NgbModule.forRoot(),
     FormsModule,
-    CKEditorModule
+    CKEditorModule,
+    HttpModule
   ],
   providers: [EntryService],
   bootstrap: [AppComponent]
