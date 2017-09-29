@@ -5,7 +5,6 @@ import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
-  // tslint:disable-next-line:component-selector
   selector: 'entry',
   templateUrl: './entry.component.html',
   styleUrls: ['./entry.component.css']

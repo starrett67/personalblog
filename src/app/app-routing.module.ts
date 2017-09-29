@@ -7,8 +7,10 @@ import { NewEntryComponent } from './new-entry/new-entry.component';
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: EntrySummaryComponent },
+    { path: 'home?search', component: EntrySummaryComponent },
     { path: 'entry/:id', component: EntryComponent },
-    { path: 'new_entry', component: NewEntryComponent }
+    { path: 'new_entry', component: NewEntryComponent },
+    { path: 'new_entry/:id', component: NewEntryComponent }
 ];
 // { path: '**', component: PageNotFoundComponent }
 

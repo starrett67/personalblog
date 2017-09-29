@@ -10,7 +10,8 @@ router.get('/', (req, res) => {
 router.get('/post/', (req, res) => {
     mongo.getAllPost()
         .then(posts => {
-            res.send(posts);
+            console.log("Responding with " + posts.length + " items.");
+            res.status(200).json(posts);
         });
 });
 
@@ -23,9 +24,10 @@ router.get('/post/:id', (req, res) => {
         });
 });
 
-router.post('/post/:id', (req, res) => {
-    let id = req.params.id;
-    mongo.getPost(id)
+router.post('/post/', (req, res) => {
+    let post = req.body;
+    console.log(post);
+    mongo.savePost(post)
         .then(post => {
             res.send(post);
         });

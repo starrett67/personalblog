@@ -1,15 +1,13 @@
 <!-- Blog Post -->
-<div *ngFor="let entry of entryList;" class="card mb-4">
+<div *ngFor="let entry of entryService.filteredEntries;" class="card mb-4">
   <img class="card-img-top" src="{{entry.headingImage}}" alt="Card image cap">
   <div class="card-body">
     <h2 class="card-title">{{entry.title}}</h2>
     <p class="card-text">{{entry.description}}</p>
     <a routerLink="/entry/{{entry._id}}" routerLinkActive="active" class="btn btn-primary">Read &rarr;</a>
+    <a routerLink="/new_entry/{{entry._id}}" routerLinkActive="active" class="btn btn-primary">Edit &rarr;</a>
   </div>
   <div class="card-footer text-muted">
     Posted on {{entry.publishedDate | date}} by {{entry.author}}
   </div>
-</div>
-<div>
-  <button class="btn btn-primary" (click)="addEntry()">Load More &darr;</button>
 </div>

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { EntrySummaryComponent } from './entry-summary/entry-summary.component';
@@ -10,7 +10,12 @@ import { SideWidgetsComponent } from './side-widgets/side-widgets.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { NewEntryComponent } from './new-entry/new-entry.component';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { SafeHtmlPipe } from '../pipes/SafeHtmlPipe';
+
+export function entryServiceFactory(entryService: EntryService): Function {
+  return () => entryService.init();
+}
 
 @NgModule({
   declarations: [
@@ -18,7 +23,8 @@ import { HttpModule } from '@angular/http';
     EntrySummaryComponent,
     EntryComponent,
     SideWidgetsComponent,
-    NewEntryComponent
+    NewEntryComponent,
+    SafeHtmlPipe
   ],
   imports: [
     AppRoutingModule,
@@ -26,9 +32,15 @@ import { HttpModule } from '@angular/http';
     NgbModule.forRoot(),
     FormsModule,
     CKEditorModule,
-    HttpModule
+    HttpClientModule
   ],
-  providers: [EntryService],
+  providers: [EntryService, {
+    // Init data from db
+    provide: APP_INITIALIZER,
+    useFactory: entryServiceFactory,
+    deps: [EntryService],
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
